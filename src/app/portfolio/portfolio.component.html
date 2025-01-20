@@ -1,0 +1,46 @@
+<section class="py-5">
+  <div class="container">
+    <div class="text-center">
+      <h1 class="text-uppercase fw-bold dark-blue-text">portfolio component</h1>
+      <div class="d-flex justify-content-center">
+        <div class="line-before"></div>
+        <i
+          _ngcontent-kck-c6=""
+          class="fa-solid fa-star dark-blue-text mt-3"
+        ></i>
+        <div class="line-after"></div>
+      </div>
+    </div>
+    <div class="row g-5 mt-1">
+      @for (image of iamges; track $index) {
+      <div class="col-md-4">
+        <div class="inner" (click)="displayBlock() ; showImg(image) ">
+          <img [src]="image.imagePath" alt="" class="w-100 rounded" />
+          <div
+            class="layer d-flex justify-content-center align-items-center rounded"
+          >
+            <i class="fa-solid fa-plus fs-1 text-white"></i>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="row">
+      <div
+        class="big-layer"
+        [class.d-none]="displayNone"
+        [class.d-block]="displayBlock()"
+        (click)="displayNonee()"
+      >
+        <div class="img col-md-6 mx-auto">
+          <img
+            [src]="currentImage.imagePath"
+            alt=""
+            width="100%"
+            class="layer-img"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
